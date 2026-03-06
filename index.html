@@ -673,32 +673,28 @@
     }
 
     /* CONTACT */
+    /* CONTACT - INVERTIDO 2x2 */
     #contact {
       background: var(--surface);
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .contact-intro {}
-
-    .contact-intro p {
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.8;
-      font-weight: 300;
-      max-width: 420px;
-    }
-
-    .contact-links {
+    /* Contenedor principal en columna para que el texto quede arriba */
+    .contact-container {
       display: flex;
       flex-direction: column;
+      gap: 40px;
+    }
+
+    .contact-header-content {
+      max-width: 800px;
+    }
+
+    /* Botones en 2x2 */
+    .contact-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .contact-item {
@@ -708,66 +704,19 @@
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 20px 24px;
+      padding: 18px 25px;
       text-decoration: none;
       color: var(--text);
-      transition: border-color var(--t), transform var(--t), box-shadow var(--t);
+      transition: all var(--t);
     }
 
     .contact-item:hover {
       border-color: var(--accent);
-      transform: translateX(6px);
+      transform: translateY(-5px);
       box-shadow: 0 8px 30px var(--shine);
     }
 
-    .contact-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .contact-icon-mail {
-      background: rgba(79, 142, 247, 0.12);
-    }
-
-    .contact-icon-wa {
-      background: rgba(37, 211, 102, 0.12);
-    }
-
-    .contact-icon-ig {
-      background: rgba(225, 48, 108, 0.12);
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .contact-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .contact-value {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .contact-right {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
+    /* Tu badge con más onda */
     .availability-badge {
       display: inline-flex;
       align-items: center;
@@ -775,9 +724,8 @@
       background: rgba(79, 142, 247, 0.08);
       border: 1px solid rgba(79, 142, 247, 0.2);
       border-radius: 12px;
-      padding: 16px 20px;
-      margin-bottom: 32px;
-      width: fit-content;
+      padding: 12px 18px;
+      margin-bottom: 24px;
     }
 
     .avail-dot {
@@ -800,14 +748,8 @@
       }
     }
 
-    .avail-text {
-      font-size: 0.82rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-
     .contact-cta-text {
-      font-size: 2rem;
+      font-size: clamp(2rem, 5vw, 3rem);
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 0.04em;
       line-height: 1.1;
@@ -815,18 +757,20 @@
     }
 
     .contact-sub {
-      font-size: 0.88rem;
+      font-size: 1rem;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.6;
       font-weight: 300;
+      max-width: 600px;
     }
 
-    @media (max-width: 768px) {
-      .contact-grid {
+    /* Celu: 1 sola columna */
+    @media (max-width: 600px) {
+      .contact-links {
         grid-template-columns: 1fr;
-        gap: 40px;
       }
     }
+  </style> ```
   </style>
 </head>
 
@@ -1060,49 +1004,9 @@
   <section id="contact">
     <div class="section-label" data-en="Get in Touch" data-es="Contacto">Get in Touch</div>
     <h2 class="section-title" data-en="Contact" data-es="Contacto">Contact</h2>
-    <div class="contact-grid reveal">
-      <div class="contact-intro">
-        <p data-en="Have a project in mind or just want to say hello? I'm always open to new opportunities and collaborations. Reach out through any of these channels."
-          data-es="¿Tenés un proyecto en mente o simplemente querés saludar? Estoy siempre abierto a nuevas oportunidades y colaboraciones. Escribime por cualquiera de estos canales.">
-          Have a project in mind or just want to say hello? I'm always open to new opportunities and collaborations.
-          Reach out through any of these channels.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:juanjovanni16@gmail.com" class="contact-item">
-            <div class="contact-icon contact-icon-mail">✉️</div>
-            <div class="contact-info">
-              <span class="contact-label" data-en="Email" data-es="Correo">Email</span>
-              <span class="contact-value">juanjovanni16@gmail.com</span>
-            </div>
-          </a>
-          <a href="https://wa.me/5493426437777" target="_blank" rel="noopener" class="contact-item">
-            <div class="contact-icon contact-icon-wa">💬</div>
-            <div class="contact-info">
-              <span class="contact-label">WhatsApp</span>
-              <span class="contact-value">+54 9 342 643 7777</span>
-            </div>
-          </a>
-          <a href="https://instagram.com/juanjovanni_" target="_blank" rel="noopener" class="contact-item">
-            <div class="contact-icon contact-icon-ig">📷</div>
-            <div class="contact-info">
-              <span class="contact-label">Instagram</span>
-              <span class="contact-value">@juanjovanni_</span>
-            </div>
-          </a>
-          <a href="https://github.com/juanvanni-dev" target="_blank" rel="noopener" class="contact-item">
-            <div class="contact-icon"
-              style="background: #24292e; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;">
-              🐱
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">@juanvanni-dev</span>
-            </div>
-          </a>
-        </div>
-      </div>
 
-      <div class="contact-right">
+    <div class="contact-container reveal">
+      <div class="contact-header-content">
         <div class="availability-badge">
           <div class="avail-dot"></div>
           <span class="avail-text" data-en="Available for freelance projects"
@@ -1116,6 +1020,40 @@
           Whether it's a landing page, a full website or a long-term collaboration — I'm ready to bring your ideas to
           life.
         </p>
+      </div>
+
+      <div class="contact-links">
+        <a href="mailto:juanjovanni16@gmail.com" class="contact-item">
+          <div class="contact-icon" style="background: rgba(79, 142, 247, 0.12); padding: 10px; border-radius: 10px;">✉️
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">juanjovanni16@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://wa.me/5493426437777" target="_blank" class="contact-item">
+          <div class="contact-icon" style="background: rgba(37, 211, 102, 0.12); padding: 10px; border-radius: 10px;">💬
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">+54 9 342 643 7777</span>
+          </div>
+        </a>
+        <a href="https://instagram.com/juanjovanni_" target="_blank" class="contact-item">
+          <div class="contact-icon" style="background: rgba(225, 48, 108, 0.12); padding: 10px; border-radius: 10px;">📷
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Instagram</span>
+            <span class="contact-value">@juanjovanni_</span>
+          </div>
+        </a>
+        <a href="https://github.com/juanvanni-dev" target="_blank" class="contact-item">
+          <div class="contact-icon" style="background: #24292e; padding: 10px; border-radius: 10px;">🐱</div>
+          <div class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">@juanvanni-dev</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>

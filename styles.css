@@ -1,130 +1,102 @@
-:root {
-  --primary: #0a1f44;
-  --secondary: #113b7a;
-  --accent: #1f6feb;
-  --light: #f5f7fa;
-  --dark: #0d1117;
-  --gray: #8b949e;
-  --transition: 0.3s ease;
-}
+/* --- SECCIÓN CONTACTO (NUEVA) --- */
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--primary);
-  color: var(--light);
-  transition: var(--transition);
-  scroll-behavior: smooth;
-}
-
-body.light {
-  background: var(--light);
-  color: var(--dark);
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  width: 80%;
-  top: 0;
-  border-radius: 0 0 20px 20px;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-}
-
-nav a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10%;
-  animation: fadeIn 1s ease;
-}
-
-.hero h1 {
-  font-size: 3rem;
-}
-
-.hero h2 {
-  color: var(--accent);
-}
-
-.hero p {
-  max-width: 600px;
-  color: var(--gray);
-}
-
-.button {
-  margin-top: 20px;
-  padding: 12px 28px;
-  background: var(--accent);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.button:hover {
-  transform: translateY(-3px);
-}
-
-section {
-  padding: 100px 10%;
-}
-
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.skills-grid,
-.portfolio-grid {
+.contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: 1.2fr 0.8fr; /* Divide en dos columnas: Izquierda (Links) y Derecha (Texto) */
+  gap: 50px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ACÁ ESTÁ EL 2x2: CORREO | INSTAGRAM arriba, WA | GITHUB abajo */
   gap: 20px;
 }
 
-.skill-card,
-.portfolio-card {
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   background: var(--secondary);
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
   transition: var(--transition);
 }
 
-.skill-card:hover,
-.portfolio-card:hover {
-  transform: translateY(-5px);
+.contact-item:hover {
   background: var(--accent);
+  transform: translateY(-3px);
 }
 
-footer {
-  text-align: center;
-  padding: 30px;
-  background: rgba(0,0,0,0.2);
+.contact-icon {
+  font-size: 1.5rem;
+  min-width: 40px;
 }
 
-@keyframes fadeIn {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
+.contact-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.contact-value {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* --- COLUMNA DERECHA --- */
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 255, 127, 0.1);
+  border: 1px solid #00ff7f;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.avail-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff7f;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff7f;
+}
+
+.avail-text {
+  color: #00ff7f;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.contact-cta-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.contact-sub {
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* --- RESPONSIVE (CELULARES) --- */
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* En tablets/celus vuelve a una sola columna */
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-links {
+    grid-template-columns: 1fr; /* En celus chicos, los botones vuelven a ser uno abajo del otro */
+  }
 }
