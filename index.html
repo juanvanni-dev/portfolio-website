@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Jose Vanni | Junior Web Developer</title>
-  <meta name="description" content="Junior Web Developer specialized in modern, responsive and high-impact websites.">
-  <meta name="keywords" content="Web Developer, HTML, CSS, Java, Portfolio, Argentina">
+  <title>Juan Jose Vanni | Web Developer & Designer</title>
+  <meta name="description"
+    content="Web Developer & Designer specialized in modern, responsive and high-impact websites.">
+  <meta name="keywords" content="Web Developer, Designer, HTML, CSS, JavaScript, WordPress, Portfolio, Argentina">
   <meta name="author" content="Juan Jose Vanni">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -420,6 +421,19 @@
 
     .skill-icon {
       font-size: 1.4rem;
+      height: 32px;
+      display: flex;
+      align-items: center;
+    }
+
+    .skill-icon img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    body:not(.light) .skill-icon .wp-icon {
+      filter: invert(1);
     }
 
     .skill-name {
@@ -475,24 +489,26 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      position: relative;
     }
 
-    .card-thumb-inner {
+    .card-thumb-img {
       width: 100%;
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 4rem;
-      letter-spacing: 0.05em;
-      opacity: 0.15;
-      transition: opacity var(--t), transform var(--t);
+      object-fit: cover;
+      object-position: top;
+      transition: transform var(--t), opacity var(--t);
+      opacity: 0.9;
     }
 
-    .portfolio-card:hover .card-thumb-inner {
-      opacity: 0.3;
-      transform: scale(1.05);
+    .card-logo-svg {
+      width: 100%;
+      height: 100%;
+      transition: transform var(--t);
+    }
+
+    .portfolio-card:hover .card-logo-svg {
+      transform: scale(1.04);
     }
 
     .card-thumb-1 {
@@ -797,8 +813,8 @@
     <div class="hero-eyebrow" data-en="Available for projects" data-es="Disponible para proyectos">Available for
       projects</div>
     <h1>Juan<br><span>Jose</span><br>Vanni</h1>
-    <p class="hero-role" data-en="Junior Web Developer — Santa Fe, Argentina"
-      data-es="Desarrollador Web Junior — Santa Fe, Argentina">Junior Web Developer — Santa Fe, Argentina</p>
+    <p class="hero-role" data-en="Web Developer & Designer — Santa Fe, Argentina"
+      data-es="Web Developer & Designer — Santa Fe, Argentina">Web Developer & Designer — Santa Fe, Argentina</p>
     <p class="hero-desc"
       data-en="I build modern, responsive and high-impact websites focused on performance and real business value."
       data-es="Construyo sitios web modernos, responsivos y de alto impacto enfocados en rendimiento y valor real de negocio.">
@@ -824,25 +840,26 @@
     <div class="about-grid reveal">
       <p class="about-text">
         <span
-          data-en="Based in <strong>Santa Fe, Argentina</strong>, I'm a junior web developer with a foundation in <strong>business administration</strong> — a background that shapes how I think about digital products: not just as technical outputs, but as strategic tools that drive real results."
-          data-es="Con base en <strong>Santa Fe, Argentina</strong>, soy un desarrollador web junior con formación en <strong>administración de empresas</strong>, lo que influye en cómo pienso los productos digitales: no solo como resultados técnicos, sino como herramientas estratégicas que generan resultados reales.">
-          Based in <strong>Santa Fe, Argentina</strong>, I'm a junior web developer with a foundation in
+          data-en="Based in <strong>Santa Fe, Argentina</strong>, I'm a web developer & designer with a foundation in <strong>business administration</strong> — a background that shapes how I think about digital products: not just as technical outputs, but as strategic tools that drive real results."
+          data-es="Con base en <strong>Santa Fe, Argentina</strong>, soy un desarrollador web y diseñador con formación en <strong>administración de empresas</strong>, lo que influye en cómo pienso los productos digitales: no solo como resultados técnicos, sino como herramientas estratégicas que generan resultados reales.">
+          Based in <strong>Santa Fe, Argentina</strong>, I'm a web developer & designer with a foundation in
           <strong>business administration</strong> — a background that shapes how I think about digital products: not
           just as technical outputs, but as strategic tools that drive real results.
         </span>
       </p>
       <div class="about-stats">
         <div class="stat">
-          <div class="stat-num">2026</div>
-          <div class="stat-label" data-en="Starting year" data-es="Año de inicio">Starting year</div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label" data-en="Client Satisfaction" data-es="Satisfacción del Cliente">Client Satisfaction
+          </div>
         </div>
         <div class="stat">
-          <div class="stat-num">5+</div>
+          <div class="stat-num">8+</div>
           <div class="stat-label" data-en="Technologies" data-es="Tecnologías">Technologies</div>
         </div>
         <div class="stat">
-          <div class="stat-num">4</div>
-          <div class="stat-label" data-en="Projects completed" data-es="Proyectos completados">Projects completed</div>
+          <div class="stat-num">4+</div>
+          <div class="stat-label" data-en="Satisfied Clients" data-es="Clientes Satisfechos">Satisfied Clients</div>
         </div>
       </div>
     </div>
@@ -854,41 +871,97 @@
     <div class="section-label" data-en="Expertise" data-es="Especialidad">Expertise</div>
     <h2 class="section-title" data-en="Skills" data-es="Habilidades">Skills</h2>
     <div class="skills-grid">
+
       <div class="skill-card reveal">
-        <div class="skill-icon">🏗️</div>
+        <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            alt="HTML5"></div>
         <div class="skill-name">HTML5</div>
         <div class="skill-bar">
-          <div class="skill-bar-fill" style="width:90%"></div>
+          <div class="skill-bar-fill" style="width:92%"></div>
         </div>
       </div>
+
       <div class="skill-card reveal">
-        <div class="skill-icon">🎨</div>
+        <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            alt="CSS3"></div>
         <div class="skill-name">CSS3</div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:88%"></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript"></div>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:78%"></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="3" width="20" height="14" rx="2" stroke="#4f8ef7" stroke-width="1.8" />
+            <path d="M8 21h8M12 17v4" stroke="#4f8ef7" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M6 8h4M6 11h8" stroke="#4f8ef7" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="skill-name" data-en="Responsive Design" data-es="Diseño Responsivo">Responsive Design</div>
         <div class="skill-bar">
           <div class="skill-bar-fill" style="width:85%"></div>
         </div>
       </div>
+
       <div class="skill-card reveal">
-        <div class="skill-icon">📱</div>
-        <div class="skill-name" data-en="Responsive" data-es="Responsivo">Responsive</div>
+        <div class="skill-icon"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress"
+            class="wp-icon"></div>
+        <div class="skill-name">WordPress</div>
         <div class="skill-bar">
-          <div class="skill-bar-fill" style="width:80%"></div>
+          <div class="skill-bar-fill" style="width:75%"></div>
         </div>
       </div>
+
       <div class="skill-card reveal">
-        <div class="skill-icon">☕</div>
-        <div class="skill-name">Java</div>
-        <div class="skill-bar">
-          <div class="skill-bar-fill" style="width:65%"></div>
+        <div class="skill-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 2h12a2 2 0 012 2v4H4V4a2 2 0 012-2z" fill="#a78bfa" opacity="0.8" />
+            <path d="M4 8h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="#a78bfa" stroke-width="1.6" />
+            <circle cx="9" cy="14" r="1.5" fill="#a78bfa" />
+            <path d="M13 13h4M13 16h3" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
         </div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-icon">🔀</div>
-        <div class="skill-name">Git & GitHub</div>
+        <div class="skill-name">WooCommerce</div>
         <div class="skill-bar">
           <div class="skill-bar-fill" style="width:70%"></div>
         </div>
       </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+            alt="Git"></div>
+        <div class="skill-name">Git & GitHub</div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:72%"></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="7" stroke="#4f8ef7" stroke-width="1.8" />
+            <path d="M20 20l-3-3" stroke="#4f8ef7" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M8 11h6M11 8v6" stroke="#4f8ef7" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="skill-name" data-en="SEO Basics" data-es="SEO Básico">SEO Basics</div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width:65%"></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -902,7 +975,9 @@
       <!-- 1: Personal Website -->
       <div class="portfolio-card reveal">
         <div class="card-thumb card-thumb-1">
-          <div class="card-thumb-inner">JJV</div>
+          <img
+            src="https://api.microlink.io/?url=https%3A%2F%2Fjuanjosevanni.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+            alt="Personal Website" class="card-thumb-img" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-tag" data-en="Personal Project" data-es="Proyecto Personal">Personal Project</div>
@@ -923,11 +998,12 @@
             data-es="Ver →">View →</a>
         </div>
       </div>
-
       <!-- 2: Mas Simple SF -->
       <div class="portfolio-card reveal">
         <div class="card-thumb card-thumb-2">
-          <div class="card-thumb-inner">MS</div>
+          <img
+            src="https://api.microlink.io/?url=https%3A%2F%2Fmas-simple.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+            alt="Mas Simple SF" class="card-thumb-img" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-tag" data-en="Landing Page" data-es="Landing Page">Landing Page</div>
@@ -951,7 +1027,9 @@
       <!-- 3: FitClub Studio -->
       <div class="portfolio-card reveal">
         <div class="card-thumb card-thumb-3">
-          <div class="card-thumb-inner">FC</div>
+          <img
+            src="https://api.microlink.io/?url=https%3A%2F%2Fjuanjosevanni.vercel.app%2Fdemo-fitclub.html&screenshot=true&meta=false&embed=screenshot.url"
+            alt="FitClub Studio" class="card-thumb-img" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-tag" data-en="Business Landing" data-es="Landing de Negocio">Business Landing</div>
@@ -976,7 +1054,9 @@
       <!-- 4: Brewed Coffee -->
       <div class="portfolio-card reveal">
         <div class="card-thumb card-thumb-4">
-          <div class="card-thumb-inner">BR</div>
+          <img
+            src="https://api.microlink.io/?url=https%3A%2F%2Fjuanjosevanni.vercel.app%2Fdemo-brewed.html&screenshot=true&meta=false&embed=screenshot.url"
+            alt="Brewed Coffee" class="card-thumb-img" loading="lazy">
         </div>
         <div class="card-body">
           <div class="card-tag" data-en="E-commerce Concept" data-es="Concepto E-commerce">E-commerce Concept</div>
@@ -1068,6 +1148,7 @@
         Argentina</span></div>
   </footer>
 
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     const glow = document.getElementById('cursor-glow');
     document.addEventListener('mousemove', e => {
@@ -1105,16 +1186,18 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.1 });
     document.querySelectorAll('.skill-card').forEach(el => skillObserver.observe(el));
 
-    window.onload = () => {
-      if (localStorage.getItem('mode') === 'light') {
-        document.body.classList.add('light');
-        modeBtn.textContent = '🌙';
-      }
-      setLang(currentLang);
-    };
+    // Init language
+    setLang(currentLang);
+
+    // Init mode
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode === 'light') {
+      document.body.classList.add('light');
+      modeBtn.textContent = '🌙';
+    }
   </script>
 </body>
 
